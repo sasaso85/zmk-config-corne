@@ -121,12 +121,12 @@
         };
 
         copy {
-            bindings = <&kp K_COPY>;
+            bindings = <&kp LG(C)>;
             key-positions = <28 27>;
         };
 
         paste {
-            bindings = <&kp K_PASTE>;
+            bindings = <&kp RG(V)>;
             key-positions = <26 27>;
         };
 
@@ -191,10 +191,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB         &kp Q             &kp W  &kp E     &kp R            &kp T      &kp Y    &kp U        &kp I                 &kp O    &kp P     &kp BACKSPACE
-&kp ESCAPE      &hm LEFT_SHIFT A  &kp S  &kp D     &kp F            &kp G      &kp H    &kp J        &kp K                 &kp L    &kp SEMI  &kp ENTER
-&kp LEFT_SHIFT  &kp Z             &kp X  &kp C     &kp V            &kp B      &kp N    &kp M        &kp COMMA             &kp DOT  &kp FSLH  &kp SQT
-                                         &kp LGUI  &lt 2 BACKSPACE  &kp TAB    &kp RET  &lt 1 SPACE  &mt RIGHT_ALT ESCAPE
+&kp TAB         &kp Q             &kp W           &kp E        &kp R               &kp T      &kp Y    &kp U                &kp I                 &kp O           &kp P                 &kp BACKSPACE
+&kp ESCAPE      &hm LEFT_SHIFT A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_COMMAND F  &kp G      &kp H    &hm RIGHT_COMMAND J  &hm RCTRL K           &hm LEFT_ALT L  &hm RIGHT_SHIFT SEMI  &kp ENTER
+&kp LEFT_SHIFT  &kp Z             &kp X           &kp C        &kp V               &kp B      &kp N    &kp M                &kp COMMA             &lt 4 DOT       &kp FSLH              &kp SQT
+                                                  &kp LGUI     &lt 2 BACKSPACE     &kp TAB    &kp RET  &lt 1 SPACE          &mt RIGHT_ALT ESCAPE
             >;
         };
 
