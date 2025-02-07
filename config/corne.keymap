@@ -75,6 +75,13 @@
             bindings = <&kp LS(T) &kp C &kp S &kp DLLR &kp N2 &kp N6 &kp N0 &kp N5 &kp DLLR &kp D &kp O &kp M &kp DLLR &kp S &kp S>;
             label = "MC_TC";
         };
+
+        mc_cnv: mc_cnv {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp O &kp R &kp K &kp DLLR &kp C &kp N &kp V &kp DLLR &kp N5 &kp N1 &kp N3 &kp N2>;
+            label = "MC_CNV";
+        };
     };
 
     combos {
@@ -82,7 +89,7 @@
 
         escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <13 29>;
+            key-positions = <16 15>;
         };
 
         delete {
@@ -122,12 +129,12 @@
 
         copy {
             bindings = <&kp LG(C)>;
-            key-positions = <28 27>;
+            key-positions = <27 26>;
         };
 
         paste {
             bindings = <&kp RG(V)>;
-            key-positions = <26 27>;
+            key-positions = <27 28>;
         };
 
         star {
@@ -174,6 +181,11 @@
             bindings = <&paragreat>;
             key-positions = <20 21>;
         };
+
+        raycast {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <15 14 39 38>;
+        };
     };
 
     //
@@ -191,10 +203,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB         &kp Q             &kp W           &kp E        &kp R               &kp T      &kp Y    &kp U                &kp I                 &kp O           &kp P                 &kp BACKSPACE
-&kp ESCAPE      &hm LEFT_SHIFT A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_COMMAND F  &kp G      &kp H    &hm RIGHT_COMMAND J  &hm RCTRL K           &hm LEFT_ALT L  &hm RIGHT_SHIFT SEMI  &kp ENTER
-&kp LEFT_SHIFT  &kp Z             &kp X           &kp C        &kp V               &kp B      &kp N    &kp M                &kp COMMA             &lt 4 DOT       &kp FSLH              &kp SQT
-                                                  &kp LGUI     &lt 2 BACKSPACE     &kp TAB    &kp RET  &lt 1 SPACE          &mt RIGHT_ALT ESCAPE
+&kp TAB         &kp Q             &kp W           &kp E        &kp R               &kp T                   &kp Y    &kp U                &kp I                 &kp O           &kp P                 &kp BACKSPACE
+&kp ESCAPE      &hm LEFT_SHIFT A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_COMMAND F  &kp G                   &kp H    &hm RIGHT_COMMAND J  &hm RCTRL K           &hm LEFT_ALT L  &hm RIGHT_SHIFT SEMI  &kp ENTER
+&kp LEFT_SHIFT  &kp Z             &kp X           &kp C        &kp V               &kp B                   &kp N    &kp M                &kp COMMA             &lt 4 DOT       &kp FSLH              &kp SQT
+                                                  &kp LGUI     &lt 2 BACKSPACE     &mt LEFT_SHIFT ENTER    &kp RET  &lt 1 SPACE          &mt RIGHT_ALT ESCAPE
             >;
         };
 
@@ -245,10 +257,10 @@
         EXTRA {
             display-name = "extra";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &mc_tc  &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &mc_tc   &trans    &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &mc_cnv  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
+                        &trans  &trans   &trans    &trans  &trans  &trans
             >;
         };
     };
