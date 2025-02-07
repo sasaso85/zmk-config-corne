@@ -54,6 +54,20 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        close_app: close_app {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CLOSE_APP";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp LG(Q)>;
+        };
+
+        hide_app: hide_app {
+            compatible = "zmk,behavior-tap-dance";
+            label = "HIDE_APP";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kp LG(W)>;
+        };
     };
 
     macros {
@@ -203,10 +217,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB         &kp Q             &kp W           &kp E        &kp R               &kp T                   &kp Y    &kp U                &kp I                 &kp O           &kp P                 &kp BACKSPACE
-&kp ESCAPE      &hm LEFT_SHIFT A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_COMMAND F  &kp G                   &kp H    &hm RIGHT_COMMAND J  &hm RCTRL K           &hm LEFT_ALT L  &hm RIGHT_SHIFT SEMI  &kp ENTER
-&kp LEFT_SHIFT  &kp Z             &kp X           &kp C        &kp V               &kp B                   &kp N    &kp M                &kp COMMA             &lt 4 DOT       &kp FSLH              &kp SQT
-                                                  &kp LGUI     &lt 2 BACKSPACE     &mt LEFT_SHIFT ENTER    &kp RET  &lt 1 SPACE          &mt RIGHT_ALT ESCAPE
+&kp TAB         &close_app        &hide_app       &kp E        &kp R               &kp T                   &kp Y    &kp U                &kp I              &kp O           &kp P                 &kp BACKSPACE
+&kp ESCAPE      &hm LEFT_SHIFT A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_COMMAND F  &kp G                   &kp H    &hm RIGHT_COMMAND J  &hm RCTRL K        &hm LEFT_ALT L  &hm RIGHT_SHIFT SEMI  &kp ENTER
+&kp LEFT_SHIFT  &kp Z             &kp X           &kp C        &kp V               &kp B                   &kp N    &kp M                &kp COMMA          &lt 4 DOT       &kp FSLH              &kp SQT
+                                                  &kp LGUI     &lt 2 BACKSPACE     &mt LEFT_SHIFT ENTER    &kp RET  &lt 1 SPACE          &mt RIGHT_ALT TAB
             >;
         };
 
@@ -258,7 +272,7 @@
             display-name = "extra";
             bindings = <
 &trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &mc_tc   &trans    &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &mc_tc   &trans    &trans  &caps   &trans  &trans  &trans       &trans
 &trans  &trans  &trans  &trans  &mc_cnv  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
                         &trans  &trans   &trans    &trans  &trans  &trans
             >;
