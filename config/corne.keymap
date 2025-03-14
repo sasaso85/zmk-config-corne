@@ -14,12 +14,12 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <260>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
 
-            quick-tap-ms = <180>;
+            quick-tap-ms = <200>;
             global-quick-tap;
         };
 
@@ -101,14 +101,14 @@
     combos {
         compatible = "zmk,combos";
 
-        escape {
-            bindings = <&kp ESCAPE>;
+        raycast {
+            bindings = <&kp LG(SPACE)>;
             key-positions = <16 15>;
         };
 
         delete {
             bindings = <&kp DELETE>;
-            key-positions = <21 15>;
+            key-positions = <15 20>;
         };
 
         perc {
@@ -178,27 +178,22 @@
 
         leftbrack {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <31 32>;
+            key-positions = <19 20>;
         };
 
         rightbrack {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <33 32>;
+            key-positions = <20 21>;
         };
 
         para-less {
             bindings = <&paraless>;
-            key-positions = <20 19>;
+            key-positions = <7 8>;
         };
 
         para-great {
             bindings = <&paragreat>;
-            key-positions = <20 21>;
-        };
-
-        raycast {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <15 14>;
+            key-positions = <8 9>;
         };
     };
 
@@ -217,10 +212,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB         &close_app        &hide_app       &kp E        &kp R               &kp T                   &kp Y    &kp U                &kp I              &kp O           &kp P                 &kp BACKSPACE
-&kp ESCAPE      &hm LEFT_SHIFT A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_COMMAND F  &kp G                   &kp H    &hm RIGHT_COMMAND J  &hm RCTRL K        &hm LEFT_ALT L  &hm RIGHT_SHIFT SEMI  &kp ENTER
-&kp LEFT_SHIFT  &kp Z             &kp X           &kp C        &kp V               &kp B                   &kp N    &kp M                &kp COMMA          &lt 4 DOT       &kp FSLH              &kp SQT
-                                                  &kp LGUI     &lt 2 BACKSPACE     &mt LEFT_SHIFT ENTER    &kp RET  &lt 1 SPACE          &mt RIGHT_ALT TAB
+&kp TAB         &close_app          &hide_app       &kp E          &kp R             &kp T             &kp Y       &kp U              &kp I        &kp O           &kp P                   &kp BACKSPACE
+&kp ESCAPE      &hm LEFT_COMMAND A  &hm LEFT_ALT S  &hm LCTRL D    &hm LEFT_SHIFT F  &kp G             &kp H       &hm RIGHT_SHIFT J  &hm RCTRL K  &hm LEFT_ALT L  &hm RIGHT_COMMAND SEMI  &kp ENTER
+&kp LEFT_SHIFT  &kp Z               &kp X           &kp C          &kp V             &kp B             &kp N       &kp M              &kp COMMA    &kp DOT         &kp FSLH                &kp SQT
+                                                    &kp BACKSPACE  &lt 2 ENTER       &kp LEFT_SHIFT    &kp ESCAPE  &lt 1 SPACE        &kp TAB
             >;
         };
 
@@ -251,10 +246,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans  &trans    &trans          &kp UP_ARROW    &trans           &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
-&trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
-                                  &trans          &trans           &trans       &trans     &trans     &trans
+&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
+&trans  &trans    &trans  &trans    &trans    &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
+&trans  &trans    &trans  &trans    &trans    &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
+                          &trans    &trans    &trans       &trans     &trans     &trans
             >;
         };
 
