@@ -193,11 +193,6 @@
             bindings = <&kp ESC>;
             key-positions = <21 22>;
         };
-
-        accent {
-            bindings = <&kp K>;
-            key-positions = <14 15>;
-        };
     };
 
     //
@@ -232,9 +227,9 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &kp N1          &kp N2        &kp N3     &kp N4            &kp N5    &kp N6          &kp N7              &kp N8               &kp N9           &kp N0       &trans
-&trans  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_COMMAND  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW         &kp RIGHT_ARROW  &trans       &trans
-&trans  &trans          &trans        &trans     &trans            &trans    &trans          &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)  &trans           &browsertab  &trans
+&trans  &kp N1          &kp N2        &kp N3     &kp N4            &kp N5    &kp N6          &kp N7              &kp N8               &kp N9           &kp N0  &trans
+&trans  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_COMMAND  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW         &kp RIGHT_ARROW  &trans  &trans
+&trans  &trans          &trans        &trans     &trans            &trans    &trans          &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)  &trans           &trans  &trans
                                       &trans     &trans            &trans    &trans          &trans              &trans
             >;
         };
