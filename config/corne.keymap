@@ -71,18 +71,6 @@
     };
 
     macros {
-        browsertab: browsertab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
         mc_tc: mc_tc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -104,7 +92,7 @@
         raycast {
             bindings = <&kp LG(SPACE)>;
             key-positions = <16 15>;
-            layers = <0>;
+            layers = <2>;
         };
 
         delete {
@@ -145,13 +133,13 @@
         copym {
             bindings = <&kp LG(C)>;
             key-positions = <27 26>;
-            layers = <0>;
+            layers = <2>;
         };
 
         pastem {
             bindings = <&kp RG(V)>;
             key-positions = <27 28>;
-            layers = <0>;
+            layers = <2>;
         };
 
         star {
@@ -192,18 +180,23 @@
         copyw {
             bindings = <&kp LC(C)>;
             key-positions = <27 26>;
-            layers = <5>;
+            layers = <0>;
         };
 
         pastew {
             bindings = <&kp LC(V)>;
             key-positions = <27 28>;
-            layers = <5>;
+            layers = <2>;
         };
 
         esc {
             bindings = <&kp ESC>;
             key-positions = <21 22>;
+        };
+
+        accent {
+            bindings = <&kp K>;
+            key-positions = <14 15>;
         };
     };
 
@@ -267,7 +260,7 @@
             display-name = "System";
             bindings = <
 &trans      &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&caps_word  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &to 0   &to 5   &trans  &trans       &trans
+&caps_word  &kp F11       &kp F12       &trans        &trans      &studio_unlock    &trans  &trans  &trans  &trans  &trans       &trans
 &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
                                         &trans        &trans      &trans            &trans  &trans  &trans
             >;
@@ -277,19 +270,9 @@
             display-name = "extra";
             bindings = <
 &trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &mc_tc   &trans    &trans  &caps   &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &mc_cnv  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
+&trans  &trans  &trans  &mc_tc  &mc_cnv  &trans    &trans  &caps   &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
                         &trans  &trans   &trans    &trans  &trans  &trans
-            >;
-        };
-
-        DEFW {
-            display-name = "BaseW";
-            bindings = <
-&kp TAB         &kp Q               &kp W           &kp E           &kp R        &kp T      &kp Y    &kp U        &kp I        &kp O           &kp P                   &kp BACKSPACE
-&kp ESCAPE      &hm LEFT_COMMAND A  &hm LEFT_ALT S  &hm LCTRL D     &kp F        &kp G      &kp H    &kp J        &hm RCTRL K  &hm LEFT_ALT L  &hm RIGHT_COMMAND SEMI  &kp ENTER
-&kp LEFT_SHIFT  &hm LEFT_SHIFT Z    &kp X           &kp C           &kp V        &kp B      &kp N    &kp M        &lt 4 COMMA  &kp DOT         &hm RIGHT_SHIFT FSLH    &kp SQT
-                                                    &kp LEFT_SHIFT  &lt 2 ENTER  &kp TAB    &kp TAB  &lt 1 SPACE  &kp RSHFT
             >;
         };
     };
