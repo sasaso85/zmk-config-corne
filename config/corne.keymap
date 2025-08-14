@@ -11,26 +11,6 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <260>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            quick-tap-ms = <200>;
-            global-quick-tap;
-        };
-
-        para: para {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PARA";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-        };
-
         caps: caps {
             compatible = "zmk,behavior-caps-word";
             label = "CAPS";
@@ -118,7 +98,7 @@
         mc_cnv: mc_cnv {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(J) &kp O &kp H &kp N &kp W &kp I &kp C &kp K &kp N0>;
+            bindings = <&kp LS(J) &kp O &kp H &kp N &kp W &kp I &kp C &kp K &kp N0 &kp NUMBER_1>;
             label = "MC_CNV";
         };
     };
@@ -247,10 +227,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB         &close_app              &hide_app        &kp E         &kp R                   &kp T      &kp Y    &kp U                    &kp I         &kp O             &kp P                       &kp BACKSPACE
-&kp ESCAPE      &ht_gui LEFT_COMMAND A  &htl LEFT_ALT S  &htl LCTRL D  &hold_tap LEFT_SHIFT F  &kp G      &kp H    &hold_tap RIGHT_SHIFT J  &htl RCTRL K  &htl RIGHT_ALT L  &ht_gui RIGHT_COMMAND SEMI  &kp ENTER
-&kp LEFT_SHIFT  &kp Z                   &kp X            &kp C         &kp V                   &kp B      &kp N    &kp M                    &lt 4 COMMA   &kp DOT           &kp FSLH                    &kp SQT
-                                                         &kp LSHFT     &lt 2 ENTER             &kp TAB    &kp TAB  &lt 1 SPACE              &kp RSHFT
+&kp TAB         &close_app              &hide_app        &kp E             &kp R                   &kp T      &kp Y    &kp U                    &kp I                 &kp O             &kp P                       &kp BACKSPACE
+&kp ESCAPE      &ht_gui LEFT_COMMAND A  &htl LEFT_ALT S  &htl LCTRL D      &hold_tap LEFT_SHIFT F  &kp G      &kp H    &hold_tap RIGHT_SHIFT J  &htl RCTRL K          &htl RIGHT_ALT L  &ht_gui RIGHT_COMMAND SEMI  &kp ENTER
+&kp LEFT_SHIFT  &kp Z                   &kp X            &kp C             &kp V                   &kp B      &kp N    &kp M                    &lt 4 COMMA           &kp DOT           &kp FSLH                    &kp SQT
+                                                         &htl LSHFT SPACE  &lt 2 ENTER             &kp TAB    &kp TAB  &lt 1 SPACE              &htl RSHFT BACKSPACE
             >;
         };
 
@@ -265,8 +245,8 @@
 
             bindings = <
 &trans  &kp N1            &kp N2        &kp N3     &kp N4          &kp N5    &kp N6          &kp N7              &kp N8               &kp N9           &kp N0  &trans
-&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW         &kp RIGHT_ARROW  &trans  &trans
-&trans  &kp ESC           &trans        &trans     &trans          &trans    &trans          &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)  &trans           &trans  &trans
+&trans  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW         &kp RIGHT_ARROW  &caps   &trans
+&trans  &trans            &trans        &trans     &trans          &trans    &trans          &kp LC(LEFT_ARROW)  &kp LC(RIGHT_ARROW)  &trans           &trans  &trans
                                         &trans     &trans          &trans    &trans          &trans              &trans
             >;
         };
@@ -281,10 +261,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp BACKSPACE  &kp EXCL  &kp AT  &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR          &trans
-&kp ENTER      &trans    &trans  &trans     &trans     &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp SINGLE_QUOTE  &trans
-&trans         &trans    &trans  &mkp LCLK  &mkp RCLK  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp BACKSLASH     &trans
-                                 &trans     &trans     &trans       &trans     &trans     &trans
+&trans  &kp EXCL  &kp AT     &kp HASH   &kp DLLR      &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR          &trans
+&trans  &kp ESC   &trans     &trans     &trans        &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp SINGLE_QUOTE  &trans
+&trans  &trans    &mkp LCLK  &mkp RCLK  &kp QUESTION  &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp EXCLAMATION       &kp BACKSLASH     &trans
+                             &trans     &trans        &trans       &trans     &trans     &trans
             >;
         };
 
@@ -302,7 +282,7 @@
             display-name = "extra";
             bindings = <
 &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &mc_tc  &mc_cnv        &trans    &trans  &caps   &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &mc_tc  &mc_cnv        &trans    &trans  &trans  &trans  &trans  &trans       &trans
 &trans  &trans  &trans  &trans  &kp LG(LS(J))  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
                         &trans  &trans         &trans    &trans  &trans  &trans
             >;
