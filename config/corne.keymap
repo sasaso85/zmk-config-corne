@@ -281,10 +281,10 @@
         EXTRA {
             display-name = "extra";
             bindings = <
-&trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &mc_tc  &mc_cnv        &trans    &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &trans  &trans  &kp LG(LS(J))  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
-                        &trans  &trans         &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans             &trans    &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &mc_tc  &mc_cnv            &trans    &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans  &trans  &kp LG(LS(SPACE))  &trans    &trans  &trans  &trans  &trans  &bootloader  &trans
+                        &trans  &trans             &trans    &trans  &trans  &trans
             >;
         };
     };
