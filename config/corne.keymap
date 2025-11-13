@@ -36,20 +36,6 @@
             mods = <(MOD_LSFT)>;
         };
 
-        close_app: close_app {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CLOSE_APP";
-            #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp LG(Q)>;
-        };
-
-        hide_app: hide_app {
-            compatible = "zmk,behavior-tap-dance";
-            label = "HIDE_APP";
-            #binding-cells = <0>;
-            bindings = <&kp W>, <&kp LG(W)>;
-        };
-
         ht_gui: ht_gui {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_GUI";
@@ -227,7 +213,7 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB         &close_app              &hide_app        &kp E             &kp R                   &kp T      &kp Y    &kp U                    &kp I                 &kp O             &kp P                       &kp BACKSPACE
+&kp TAB         &kp Q                   &kp W            &kp E             &kp R                   &kp T      &kp Y    &kp U                    &kp I                 &kp O             &kp P                       &kp BACKSPACE
 &kp ESCAPE      &ht_gui LEFT_COMMAND A  &htl LEFT_ALT S  &htl LCTRL D      &hold_tap LEFT_SHIFT F  &kp G      &kp H    &hold_tap RIGHT_SHIFT J  &htl RCTRL K          &htl RIGHT_ALT L  &ht_gui RIGHT_COMMAND SEMI  &kp ENTER
 &kp LEFT_SHIFT  &kp Z                   &kp X            &kp C             &kp V                   &kp B      &kp N    &kp M                    &lt 4 COMMA           &kp DOT           &kp FSLH                    &kp SQT
                                                          &htl LSHFT SPACE  &lt 2 ENTER             &kp TAB    &kp TAB  &lt 1 SPACE              &htl RSHFT BACKSPACE
@@ -279,7 +265,7 @@
         };
 
         EXTRA {
-            display-name = "extra";
+            display-name = "Extra";
             bindings = <
 &trans  &trans  &trans  &trans  &trans             &trans    &trans  &trans  &trans  &trans  &trans       &trans
 &trans  &trans  &trans  &mc_tc  &mc_cnv            &trans    &trans  &trans  &trans  &trans  &trans       &trans
