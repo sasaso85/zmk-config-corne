@@ -258,4 +258,13 @@
             >;
         };
     };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        l3 {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
 };
