@@ -1,7 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 
 #define DEF 0
 #define NAV 1
@@ -200,7 +199,7 @@
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E           &kp R        &kp T            &kp Y    &kp U        &kp I              &kp O    &kp P     &kp BACKSPACE
 &kp ESC    &kp A  &kp S  &kp D           &kp F        &kp G            &kp H    &kp J        &kp K              &kp L    &kp SEMI  &kp ENTER
-&kp LCTRL  &kp Z  &kp X  &kp C           &kp V        &kp B            &kp N    &kp M        &kp COMMA          &kp DOT  &kp FSLH  &kp SQT
+&kp LCTRL  &kp Z  &kp X  &kp C           &kp V        &kp B            &kp N    &kp M        &lt 4 COMMA        &kp DOT  &kp FSLH  &kp SQT
                          &hm LGUI SPACE  &lt 2 ENTER  &kp BACKSPACE    &kp TAB  &lt 1 SPACE  &hm RIGHT_ALT ESC
             >;
         };
@@ -252,10 +251,10 @@
         EXTRA {
             display-name = "Extra";
             bindings = <
-&trans  &trans  &trans          &trans          &trans           &msc SCRL_UP      &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans          &mmv MOVE_UP    &trans           &msc SCRL_DOWN    &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans            &trans  &trans     &trans     &trans  &trans  &trans
-                                &trans          &trans           &trans            &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mc_tc  &mc_bv  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
