@@ -63,6 +63,20 @@
                 <&macro_release>,
                 <&kp LCTRL>;
         };
+
+        mc_tc: mc_tc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(T) &kp C &kp S &kp DLLR &kp N2 &kp N6 &kp N0 &kp N5 &kp DLLR &kp D &kp O &kp M &kp DLLR &kp S &kp S>;
+            label = "MC_TC";
+        };
+
+        mc_bv: mc_cnv {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(J) &kp O &kp H &kp N &kp W &kp I &kp C &kp K &kp N0 &kp N1>;
+            label = "MC_CNV";
+        };
     };
 
     combos {
